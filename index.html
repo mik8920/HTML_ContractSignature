@@ -12,7 +12,7 @@
 
       <div class="contractInstuctions">
         <p>
-          Για να χρησιμοποιείσετε το Μητρώο Μελών είναι απαραίτητη η υπογραφή
+          Για να χρησιμοποιήσετε το Μητρώο Μελών είναι απαραίτητη η υπογραφή
           του Ιδιωτικού Συμφωνητικού. Το ιδιωτικό συμφωνητικό μεριμνά για την
           προστασία των προσωπικών δεδομένων του φορέα σας.
         </p>
@@ -88,35 +88,35 @@
       </div>
       <div class="personalInfoContainer">
         <h3>Στοιχεία Υπογράφοντος</h3>
-        <form id="contractForm" action="" method="POST">
+        <form id="contractForm" action="" method="">
           <div class="nameContainer">
             <div class="lastName">
               <label for="lname"></label>
               <input
                 type="text"
-                name="name"
+                name="last_name"
                 id="lname"
                 placeholder="Επώνυμο"
-                required
+                
               />
             </div>
             <div class="firstName">
               <label for="fname"></label>
               <input
                 type="text"
-                name="name"
+                name="first_name"
                 id="fname"
                 placeholder="Όνομα"
-                required
+                
               />
             </div>
           </div>
-          <div class="signature">
+          <div class="signatureBox">
             <label for="signature">Υπογραφή:</label>
-            <textarea id="signature" name="signature" required></textarea>
+            <textarea id="signature" name="signature" ></textarea>
           </div>
           <div class="checkbox">
-            <input type="checkbox" id="checkbox" name="checkbox" required />
+            <input type="checkbox" id="checkbox" name="confirmation"  />
             <label for="checkbox" 
               >Δηλώνω Υπεύθυνα πως διάβασα και συμφωνώ με το σύνολο των όρων του
               Ιδιωτικού Συμφωνητικού.</label
