@@ -52,6 +52,10 @@ h1 {
   height: 256px;
 }
 
+.privateContract p{
+  margin:0;
+}
+
 #contractForm {
   display: flex;
   flex-direction: column;
@@ -68,9 +72,10 @@ h1 {
   padding: 8px;
   font-size: 14px;
   width: fit-content;
+  cursor: pointer;
 }
 
-.readMoreBtn {
+.scrollBtn {
   color: var(--color-blue-dark);
   background-color: var(--color-white);
   border-radius: 4px;
@@ -78,6 +83,9 @@ h1 {
   padding: 8px;
   width: 36%;
   font-size: 14px;
+  cursor: pointer;
+  position: sticky;
+  bottom: 0;
 }
 
 .downloadPDFBtn {
@@ -87,6 +95,7 @@ h1 {
   border: 1px solid var(--color-blue-dark);
   padding: 8px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .personalInfoContainer {
@@ -129,6 +138,7 @@ label {
 #checkbox {
   padding: 12px;
   width: fit-content;
+  cursor: pointer;
 }
 
 .checkbox label {

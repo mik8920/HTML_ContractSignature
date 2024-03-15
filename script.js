@@ -1,11 +1,13 @@
 const contractForm = document.getElementById("contractForm");
 const submitFormBtn = document.querySelector(".submitFormBtn");
+const lastName = document.getElementById("lname");
+const firstName = document.getElementById("fname");
+const signature = document.getElementById("signature");
+const checkbox = document.getElementById("checkbox");
+const scrollBtn = document.querySelector(".scrollBtn");
+const contractWindow = document.querySelector(".privateContract");
 
 const validateFields = (e) => {
-  const lastName = document.getElementById("lname");
-  const firstName = document.getElementById("fname");
-  const signature = document.getElementById("signature");
-  const checkbox = document.getElementById("checkbox");
   let isValid = true;
 
   if (!checkbox.checked) {
@@ -48,3 +50,24 @@ const validateFields = (e) => {
 };
 
 submitFormBtn.addEventListener("click", validateFields);
+
+scrollBtn.addEventListener("click", function () {
+  contractWindow.scrollIntoView({
+    behavior: "smooth",
+    block: "end",
+  });
+});
+
+contractWindow.addEventListener("scroll", function () {
+  if (
+    contractWindow.scrollTop ==
+    contractWindow.scrollHeight - contractWindow.offsetHeight + 2 //scrollTop is 0 based
+  ) {
+    scrollBtn.style.display = "none";
+    console.log("OK");
+  } else {
+    scrollBtn.style.display = "block";
+  }
+});
+
+
