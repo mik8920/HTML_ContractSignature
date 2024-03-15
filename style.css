@@ -6,6 +6,7 @@
   --color-grey-dark: rgba(105, 101, 119, 255);
   --color-grey-light: rgba(226, 227, 229, 1);
   --color-black-light: rgb(44, 44, 44);
+  --color-red: rgba(216, 5, 5, 0.788);
 }
 
 body {
@@ -52,8 +53,8 @@ h1 {
   height: 256px;
 }
 
-.privateContract p{
-  margin:0;
+.privateContract p {
+  margin: 0;
 }
 
 #contractForm {
@@ -176,4 +177,11 @@ textarea:focus {
 
 textarea {
   border-radius: 4px;
+}
+
+.validationMessage {
+  font-size: 12px;
+  color: var(--color-red);
+  font-weight: 600;
+  display: none;
 }

@@ -6,9 +6,27 @@ const signature = document.getElementById("signature");
 const checkbox = document.getElementById("checkbox");
 const scrollBtn = document.querySelector(".scrollBtn");
 const contractWindow = document.querySelector(".privateContract");
+const validationMessage = document.querySelector(".validationMessage");
 
 const validateFields = (e) => {
   let isValid = true;
+
+  if (
+    checkbox.checked &&
+    signature.value !== "" &&
+    firstName.value !== "" &&
+    lastName.value !== "" &&
+    (
+      contractWindow.scrollTop <
+      contractWindow.scrollHeight - contractWindow.offsetHeight + 2
+    )
+  ) {
+    validationMessage.style.display = "block";
+    isValid = false;
+  } else {
+    validationMessage.style.display = "none";
+    isValid = true;
+  }
 
   if (!checkbox.checked) {
     checkbox.setCustomValidity(
@@ -64,10 +82,7 @@ contractWindow.addEventListener("scroll", function () {
     contractWindow.scrollHeight - contractWindow.offsetHeight + 2 //scrollTop is 0 based
   ) {
     scrollBtn.style.display = "none";
-    console.log("OK");
   } else {
     scrollBtn.style.display = "block";
   }
 });
-
-
