@@ -16,10 +16,8 @@ const validateFields = (e) => {
     signature.value !== "" &&
     firstName.value !== "" &&
     lastName.value !== "" &&
-    (
-      contractWindow.scrollTop <
+    contractWindow.scrollTop <
       contractWindow.scrollHeight - contractWindow.offsetHeight + 2
-    )
   ) {
     validationMessage.style.display = "block";
     isValid = false;
@@ -85,4 +83,15 @@ contractWindow.addEventListener("scroll", function () {
   } else {
     scrollBtn.style.display = "block";
   }
+});
+
+const signaturePad = new SignaturePad(
+  document.getElementById("signature-pad"),
+  {
+    penColor: "rgb(0,0,0)",
+  }
+);
+const clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener("click", function () {
+  signaturePad.clear();
 });

@@ -114,10 +114,14 @@
               />
             </div>
           </div>
-          <div class="signatureBox">
-            <label for="signature">Υπογραφή:</label>
-            <textarea id="signature" name="signature"></textarea>
+
+          <div class="signature-box">
+            <h5>Υπογραφή</h5>
+            
+            <canvas id="signature-pad" class="signature-pad"></canvas>
+            <button id="clearBtn">Clear</button>
           </div>
+
           <div class="checkbox">
             <input type="checkbox" id="checkbox" name="confirmation" />
             <label for="checkbox"
@@ -138,11 +142,12 @@
           </button>
         </form>
         <p>
-          * Για να υπογράψετε το συμφωνητικό απαίτείται να κάνετε scroll μέχρι
-          το τέλος του Ιδιωτικού Συμφωνητικού.
+          * Για να υπογράψετε το συμφωνητικό απαίτείται να σύρετε τη μπάρα του
+          Ιδιωτικού Συμφωνητικού μέχρι το τέλος.
         </p>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
