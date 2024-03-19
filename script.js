@@ -85,6 +85,7 @@ contractWindow.addEventListener("scroll", function () {
   }
 });
 
+
 const signaturePad = new SignaturePad(
   document.getElementById("signature-pad"),
   {
