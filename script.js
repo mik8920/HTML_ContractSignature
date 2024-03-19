@@ -21,7 +21,7 @@ const validateFields = (e) => {
 
   if (
     checkbox.checked &&
-    signature.value !== "" &&
+   !signaturePad.isEmpty() &&
     firstName.value !== "" &&
     lastName.value !== "" &&
     contractWindow.scrollTop <

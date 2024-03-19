@@ -185,8 +185,6 @@ textarea:focus {
 .signature-pad {
   border: 1px solid var(--color-grey-dark);
   border-radius: 4px;
-  width: 420px;
-  height: 160px;
 }
 
 #clearBtn {
