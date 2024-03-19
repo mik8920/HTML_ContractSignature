@@ -11,6 +11,7 @@ const validationMessageScroll = document.querySelector(
 );
 const validationMessageSign = document.querySelector(".validationMessageSign");
 const clearBtn = document.getElementById("clearBtn");
+let isScrolled = false;
 
 const signaturePad = new SignaturePad(signature, {
   penColor: "rgb(0,0,0)",
@@ -21,11 +22,10 @@ const validateFields = (e) => {
 
   if (
     checkbox.checked &&
-   !signaturePad.isEmpty() &&
+    !signaturePad.isEmpty() &&
     firstName.value !== "" &&
     lastName.value !== "" &&
-    contractWindow.scrollTop <
-      contractWindow.scrollHeight - contractWindow.offsetHeight + 2
+    isScrolled === false
   ) {
     validationMessageScroll.style.display = "block";
     isValid = false;
@@ -87,6 +87,7 @@ contractWindow.addEventListener("scroll", () => {
     contractWindow.scrollHeight - contractWindow.offsetHeight + 2 //scrollTop is 0 based
   ) {
     scrollBtn.style.display = "none";
+    isScrolled = true;
   } else {
     scrollBtn.style.display = "block";
   }
