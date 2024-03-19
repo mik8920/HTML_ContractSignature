@@ -106,7 +106,7 @@ h1 {
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  gap:8px;
+  gap: 8px;
 }
 
 label {
@@ -133,7 +133,7 @@ label {
   cursor: pointer;
 }
 
-.checkboxContainer label{
+.checkboxContainer label {
   font-size: 16px;
 }
 
@@ -166,7 +166,8 @@ textarea:focus {
   box-shadow: 1px 1px 3px rgb(49, 49, 49);
 }
 
-.validationMessage {
+.validationMessageScroll,
+.validationMessageSign {
   font-size: 12px;
   color: var(--color-red);
   font-weight: 600;
@@ -174,12 +175,11 @@ textarea:focus {
 }
 
 .signature-box {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:8px;
-
+  gap: 8px;
 }
 
 .signature-pad {
@@ -200,8 +200,8 @@ textarea:focus {
   cursor: pointer;
 }
 
-.signature-box h5{
+.signature-box h5 {
   font-size: 14px;
   font-weight: 600;
-  margin:0;
+  margin: 0;
 }

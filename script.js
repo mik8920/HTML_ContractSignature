@@ -2,11 +2,19 @@ const contractForm = document.getElementById("contractForm");
 const submitFormBtn = document.querySelector(".submitFormBtn");
 const lastName = document.getElementById("lname");
 const firstName = document.getElementById("fname");
-const signature = document.getElementById("signature");
+const signature = document.getElementById("signature-pad");
 const checkbox = document.getElementById("checkbox");
 const scrollBtn = document.querySelector(".scrollBtn");
 const contractWindow = document.querySelector(".privateContract");
-const validationMessage = document.querySelector(".validationMessage");
+const validationMessageScroll = document.querySelector(
+  ".validationMessageScroll"
+);
+const validationMessageSign = document.querySelector(".validationMessageSign");
+const clearBtn = document.getElementById("clearBtn");
+
+const signaturePad = new SignaturePad(signature, {
+  penColor: "rgb(0,0,0)",
+});
 
 const validateFields = (e) => {
   let isValid = true;
@@ -19,10 +27,10 @@ const validateFields = (e) => {
     contractWindow.scrollTop <
       contractWindow.scrollHeight - contractWindow.offsetHeight + 2
   ) {
-    validationMessage.style.display = "block";
+    validationMessageScroll.style.display = "block";
     isValid = false;
   } else {
-    validationMessage.style.display = "none";
+    validationMessageScroll.style.display = "none";
     isValid = true;
   }
 
@@ -36,12 +44,11 @@ const validateFields = (e) => {
     checkbox.setCustomValidity("");
   }
 
-  if (signature.value === "") {
-    signature.setCustomValidity("Το πεδίο είναι υποχρεωτικό");
-    signature.reportValidity();
+  if (signaturePad.isEmpty()) {
+    validationMessageSign.style.display = "block";
     isValid = false;
   } else {
-    signature.setCustomValidity("");
+    validationMessageSign.style.display = "none";
   }
 
   if (firstName.value === "") {
@@ -67,14 +74,14 @@ const validateFields = (e) => {
 
 submitFormBtn.addEventListener("click", validateFields);
 
-scrollBtn.addEventListener("click", function () {
+scrollBtn.addEventListener("click", () => {
   contractWindow.scrollIntoView({
     behavior: "smooth",
     block: "end",
   });
 });
 
-contractWindow.addEventListener("scroll", function () {
+contractWindow.addEventListener("scroll", () => {
   if (
     contractWindow.scrollTop ==
     contractWindow.scrollHeight - contractWindow.offsetHeight + 2 //scrollTop is 0 based
@@ -83,16 +90,4 @@ contractWindow.addEventListener("scroll", function () {
   } else {
     scrollBtn.style.display = "block";
   }
-});
-
-
-const signaturePad = new SignaturePad(
-  document.getElementById("signature-pad"),
-  {
-    penColor: "rgb(0,0,0)",
-  }
-);
-const clearBtn = document.getElementById("clearBtn");
-clearBtn.addEventListener("click", function () {
-  signaturePad.clear();
 });
